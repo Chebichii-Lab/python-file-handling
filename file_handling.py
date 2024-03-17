@@ -25,3 +25,16 @@ except FileNotFoundError:
     print(f"File {FILE_NAME} not found.")
 except PermissionError:
     print(f"Permission denied for file {FILE_NAME}.")
+
+# Open "my_file.txt" in append mode ('a')
+try:
+    with open(FILE_NAME, 'a') as file:
+        file.write("\nThis is the first appended line.\n")
+        file.write("This is the second appended line with a number: 23.\n")
+        file.write("This is the third appended line with a string and a number: Goodbye, 5.\n")
+except FileNotFoundError:
+    print(f"File {FILE_NAME} not found.")
+except PermissionError:
+    print(f"Permission denied for file {FILE_NAME}.")
+finally:
+    print("File appending completed.")
