@@ -16,3 +16,12 @@ except PermissionError:
 finally:
     print("File creation completed.")
 
+# Read the contents of "my_file.txt" and display them on the console
+try:
+    with open(FILE_NAME, 'r') as file:
+        print("File contents:")
+        print(file.read())
+except FileNotFoundError:
+    print(f"File {FILE_NAME} not found.")
+except PermissionError:
+    print(f"Permission denied for file {FILE_NAME}.")
